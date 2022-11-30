@@ -18,8 +18,8 @@ return new class extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('username')->unique();
-            $table->boolean('active');
-            $table->bigInteger('num_id');
+            $table->boolean('active')->default(true);
+            $table->bigInteger('num_id')->unique();
             $table->string('password');
             $table->smallInteger('role');
             $table->timestamp('email_verified_at')->nullable();

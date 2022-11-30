@@ -15,12 +15,29 @@
                 <div class="dropdown">
                     <a id="dropdownUser" class="nav-link dropdown-toggle text-light" href="#" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
+                        Usuarios
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownUser">
+                        <a class="dropdown-item" href="/users">
+                            <span class="material-symbols-outlined">
+                                visibility
+                            </span>
+                            Ver Usuarios
+                        </a>
+                        <a class="dropdown-item" href="/users/new">
+                            <span class="material-symbols-outlined">
+                                person_add
+                            </span>
+                            Crear usuario
+                        </a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a id="dropdownUser" class="nav-link dropdown-toggle text-light" href="#" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
                         Menú
                     </a>
                     <div class="dropdown-menu" aria-labelledby="dropdownUser">
-                        <a class="dropdown-item" href="#">
-                            Opcion1
-                        </a>
                         <a class="dropdown-item" href="#">
                             Opcion2
                         </a>

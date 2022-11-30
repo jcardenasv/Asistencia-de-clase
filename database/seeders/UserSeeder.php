@@ -20,7 +20,6 @@ class UserSeeder extends Seeder
             'name' => 'Tony Stark',
             'email' => 'admin@gmail.com',
             'username' => 'admin',
-            'active' => 1,
             'num_id' => 1234,
             'password' => Hash::make('admin'),
             'role' => 1     #1-> Administrador, 2-> Profesor, 3-> Estudiante
@@ -30,7 +29,6 @@ class UserSeeder extends Seeder
             'name' => 'Bruce Banner',
             'email' => 'profesor@gmail.com',
             'username' => 'profesor',
-            'active' => 1,
             'num_id' => 5678,
             'password' => Hash::make('profesor'),
             'role' => 2     #1-> Administrador, 2-> Profesor, 3-> Estudiante
@@ -40,7 +38,6 @@ class UserSeeder extends Seeder
             'name' => 'Peter Parker',
             'email' => 'estudiante@gmail.com',
             'username' => 'estudiante',
-            'active' => 1,
             'num_id' => 1212,
             'password' => Hash::make('estudiante'),
             'role' => 3     #1-> Administrador, 2-> Profesor, 3-> Estudiante
