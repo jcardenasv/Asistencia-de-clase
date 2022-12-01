@@ -30,6 +30,18 @@
                             </span>
                             Crear usuario
                         </a>
+                        <a class="dropdown-item" href="/users/edit">
+                            <span class="material-symbols-outlined">
+                                edit
+                            </span>
+                            Editar usuario
+                        </a>
+                        <a class="dropdown-item" href="/users/delete">
+                            <span class="material-symbols-outlined">
+                                delete
+                            </span>
+                            Eliminar usuario
+                        </a>
                     </div>
                 </div>
                 <div class="dropdown">
