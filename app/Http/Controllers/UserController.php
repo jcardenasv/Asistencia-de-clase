@@ -9,7 +9,6 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Arr;
 use App\Models\Teacher;
 use App\Models\Student;
-use PhpParser\Node\Expr\FuncCall;
 
 class UserController extends Controller
 {
@@ -22,9 +21,9 @@ class UserController extends Controller
     {
         $users = User::orderBy('id', 'desc')->paginate(5);
         foreach ($users as $user) {
-            if ($user->role == '1') {
+            if ($user->role == 1) {
                 $user['role_name'] = 'Administrador';
-            } elseif ($user->role == '2') {
+            } elseif ($user->role == 2) {
                 $user['role_name'] = 'Profesor';
             } else {
                 $user['role_name'] = 'Estudiante';
@@ -49,9 +48,9 @@ class UserController extends Controller
         }
         $role = $user->role;
         if ($role == 2) {
-            $user = User::where('num_id', $request['num_id'])->select('users.id as id', 'name', 'username', 'password', 'email', 'active', 'num_id', 'role', 'knowledge_area', 'department', 'teacher.id as id_teacher')->join("teachers", "teachers.id_user", "=", "users.id")->first();
+            $user = User::where('num_id', $request['num_id'])->select('users.id as id', 'name', 'username', 'password', 'email', 'active', 'num_id', 'role', 'knowledge_area', 'department')->join("teachers", "teachers.id_user", "=", "users.id")->first();
         } else if ($role == 3) {
-            $user = User::where('num_id', $request['num_id'])->select('users.id as id', 'name', 'username', 'password', 'email', 'active', 'num_id', 'role', 'career', 'students.id as id_student')->join("students", "students.id_user", "=", "users.id")->first();
+            $user = User::where('num_id', $request['num_id'])->select('users.id as id', 'name', 'username', 'password', 'email', 'active', 'num_id', 'role', 'career')->join("students", "students.id_user", "=", "users.id")->first();
         }
         return view('users.edit', compact('user'));
     }
@@ -122,9 +121,9 @@ class UserController extends Controller
 
         $validations = [
             'name' => 'required',
-            'num_id' => 'required',
-            'email' => 'required',
-            'username' => 'required',
+            'num_id' => ['required', 'unique:users,num_id,'.$request['id_user']],
+            'email' => ['required', 'unique:users,email,'.$request['id_user']],
+            'username' => ['required', 'unique:users,username,'.$request['id_user']],
             'active2' => 'required'
         ];
 

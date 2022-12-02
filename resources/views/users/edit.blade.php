@@ -15,14 +15,6 @@
                         value="{{ $user->active }}">
                 </div>
                 <div class="container-fluid" hidden>
-                    <input type="text" class="form-control" id="id_teacher" name="id_teacher"
-                        value="{{ $user->id_teacher }}">
-                </div>
-                <div class="container-fluid" hidden>
-                    <input type="text" class="form-control" id="id_student" name="id_student"
-                        value="{{ $user->id_student }}">
-                </div>
-                <div class="container-fluid" hidden>
                     <input type="text" class="form-control" id="id_user" name="id_user" value="{{ $user->id }}">
                 </div>
                 <div class="container-fluid" hidden>

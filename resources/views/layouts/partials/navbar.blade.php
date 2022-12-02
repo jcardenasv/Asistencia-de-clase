@@ -12,6 +12,9 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link text-light" aria-current="page" href="/">Inicio</a>
+                </li>
                 <div class="dropdown">
                     <a id="dropdownUser" class="nav-link dropdown-toggle text-light" href="#" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
@@ -22,7 +25,7 @@
                             <span class="material-symbols-outlined">
                                 visibility
                             </span>
-                            Ver Usuarios
+                            Ver usuarios
                         </a>
                         <a class="dropdown-item" href="/users/new">
                             <span class="material-symbols-outlined">
@@ -47,11 +50,32 @@
                 <div class="dropdown">
                     <a id="dropdownUser" class="nav-link dropdown-toggle text-light" href="#" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
-                        Menú
+                        Cursos
                     </a>
                     <div class="dropdown-menu" aria-labelledby="dropdownUser">
-                        <a class="dropdown-item" href="#">
-                            Opcion2
+                        <a class="dropdown-item" href="/courses">
+                            <span class="material-symbols-outlined">
+                                visibility
+                            </span>
+                            Ver cursos
+                        </a>
+                        <a class="dropdown-item" href="/courses/new">
+                            <span class="material-symbols-outlined">
+                                person_add
+                            </span>
+                            Crear curso
+                        </a>
+                        <a class="dropdown-item" href="/courses/edit">
+                            <span class="material-symbols-outlined">
+                                edit
+                            </span>
+                            Editar curso
+                        </a>
+                        <a class="dropdown-item" href="/courses/delete">
+                            <span class="material-symbols-outlined">
+                                delete
+                            </span>
+                            Eliminar curso
                         </a>
                     </div>
                 </div>

@@ -19,7 +19,7 @@ class CourseSeeder extends Seeder
                 'code' => '002312',
                 'name' => 'Ingenieria de Requisitos',
                 'description' => 'Bla Bla Bla',
-                'methodology' => 'Presencial'
+                'methodology' => 1 #Presencial
             ]
         );
 
@@ -28,7 +28,7 @@ class CourseSeeder extends Seeder
                 'code' => '002343',
                 'name' => 'Bases de datos',
                 'description' => 'Bla Bla Bla',
-                'methodology' => 'Remota'
+                'methodology' => 2 #Remota
             ]
         );
     }
