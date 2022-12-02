@@ -28,10 +28,10 @@
                         </div>
                         <div class="col-11">
                             <select class="form-select" aria-label="Default select example" id="role">
-                                <option value="0" selected>Seleccione un tipo</option>
-                                <option value="1">Administrador</option>
-                                <option value="2">Profesor</option>
-                                <option value="3">Estudiante</option>
+                                <option value=0 selected>Seleccione un tipo</option>
+                                <option value=1>Administrador</option>
+                                <option value=2>Profesor</option>
+                                <option value=3>Estudiante</option>
                             </select>
                         </div>
                     </div>
