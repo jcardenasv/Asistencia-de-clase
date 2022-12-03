@@ -1,21 +1,21 @@
 @extends('layouts.app-master')
 @section('title')
-    Editar Clase
+    Editar Asistencia
 @endsection
 @section('content')
     <div class="mx-auto mt-5" style="width: 500px">
-        <form action={{ $type == 1 ? '/classes/delete' : '/classes/edit' }} method="POST">
+        <form action={{ $type == 1 ? '/attendances/delete' : '/attendances/edit' }} method="POST">
             @csrf
             @method($type == 1 ? 'delete' : 'post')
             @include('layouts.partials.messages')
             <div>
-                <h2>{{ $type == 1 ? 'BUSCAR CLASE A ELIMINAR' : 'BUSCAR CLASE A EDITAR' }}</h2>
+                <h2>{{ $type == 1 ? 'BUSCAR ASISTENCIA A ELIMINAR' : 'BUSCAR ASISTENCIA A EDITAR' }}</h2>
                 <div class="mt-3">
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-1"></div>
                             <div class="col-11">
-                                <label for="id" class="form-label">ID Clase</label>
+                                <label for="id" class="form-label">ID Asistencia</label>
                             </div>
                         </div>
                     </div>

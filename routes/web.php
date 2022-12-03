@@ -7,6 +7,7 @@ use App\Http\Controllers\logoutController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\classeController;
+use App\Http\Controllers\attendanceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -54,3 +55,13 @@ Route::post('/classes/edit', [classeController::class, 'search'])->middleware('a
 Route::put('/classes/edit', [classeController::class, 'update'])->middleware('auth')->middleware('canAccess')->name('classes.update');
 Route::get('/classes/delete', [classeController::class, 'delete'])->middleware('auth')->middleware('canAccess');
 Route::delete('/classes/delete', [classeController::class, 'destroy'])->middleware('auth')->middleware('canAccess');
+
+#ATTENDANCES
+Route::get('/attendances', [attendanceController::class, 'index'])->middleware('auth');
+Route::post('/attendances', [attendanceController::class, 'store'])->middleware('auth');
+Route::get('/attendances/new', [attendanceController::class, 'create'])->middleware('auth')->middleware('canAccess');
+Route::get('/attendances/edit', [attendanceController::class, 'edit'])->middleware('auth')->middleware('canAccess');
+Route::post('/attendances/edit', [attendanceController::class, 'search'])->middleware('auth')->middleware('canAccess');
+Route::put('/attendances/edit', [attendanceController::class, 'update'])->middleware('auth')->middleware('canAccess')->name('classes.update');
+Route::get('/attendances/delete', [attendanceController::class, 'delete'])->middleware('auth')->middleware('canAccess');
+Route::delete('/attendances/delete', [attendanceController::class, 'destroy'])->middleware('auth')->middleware('canAccess');

@@ -5,8 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Classe;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-use Exception;
 
 class classeController extends Controller
 {

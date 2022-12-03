@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('attendance_records', function (Blueprint $table) {
+        Schema::create('attendances', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('id_class');
             $table->unsignedBigInteger('id_student');
@@ -24,7 +24,7 @@ return new class extends Migration
                 ->onUpdate('cascade');
             $table->foreign('id_student')
                 ->references('id')
-                ->on('students')
+                ->on('students') # Posible cambio para users
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
             $table->timestamps();
@@ -38,6 +38,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('attendance_records');
+        Schema::dropIfExists('attendances');
     }
 };

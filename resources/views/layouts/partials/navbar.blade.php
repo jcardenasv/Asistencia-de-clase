@@ -114,6 +114,38 @@
                 <div class="dropdown">
                     <a id="dropdownUser" class="nav-link dropdown-toggle text-light" href="#" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
+                        Asistencias
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownUser">
+                        <a class="dropdown-item" href="/attendances">
+                            <span class="material-symbols-outlined">
+                                visibility
+                            </span>
+                            Ver asistencias
+                        </a>
+                        <a class="dropdown-item" href="/attendances/new">
+                            <span class="material-symbols-outlined">
+                                person_add
+                            </span>
+                            Crear asitencia
+                        </a>
+                        <a class="dropdown-item" href="/attendances/edit">
+                            <span class="material-symbols-outlined">
+                                edit
+                            </span>
+                            Editar asistencia
+                        </a>
+                        <a class="dropdown-item" href="/attendances/delete">
+                            <span class="material-symbols-outlined">
+                                delete
+                            </span>
+                            Eliminar asistencia
+                        </a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a id="dropdownUser" class="nav-link dropdown-toggle text-light" href="#" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
                         {{ auth()->user()->name }}
                     </a>
                     <div class="dropdown-menu" aria-labelledby="dropdownUser">
