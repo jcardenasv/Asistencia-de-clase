@@ -6,6 +6,7 @@ use App\Http\Controllers\homeController;
 use App\Http\Controllers\logoutController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CourseController;
+use App\Http\Controllers\classeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,3 +44,13 @@ Route::post('/courses/edit', [CourseController::class, 'search'])->middleware('a
 Route::put('/courses/edit', [CourseController::class, 'update'])->middleware('auth')->middleware('canAccess')->name('courses.update');
 Route::get('/courses/delete', [CourseController::class, 'delete'])->middleware('auth')->middleware('canAccess');
 Route::delete('/courses/delete', [CourseController::class, 'destroy'])->middleware('auth')->middleware('canAccess');
+
+#CLASSES
+Route::get('/classes', [classeController::class, 'index'])->middleware('auth');
+Route::post('/classes', [classeController::class, 'store'])->middleware('auth');
+Route::get('/classes/new', [classeController::class, 'create'])->middleware('auth')->middleware('canAccess');
+Route::get('/classes/edit', [classeController::class, 'edit'])->middleware('auth')->middleware('canAccess');
+Route::post('/classes/edit', [classeController::class, 'search'])->middleware('auth')->middleware('canAccess');
+Route::put('/classes/edit', [classeController::class, 'update'])->middleware('auth')->middleware('canAccess')->name('classes.update');
+Route::get('/classes/delete', [classeController::class, 'delete'])->middleware('auth')->middleware('canAccess');
+Route::delete('/classes/delete', [classeController::class, 'destroy'])->middleware('auth')->middleware('canAccess');

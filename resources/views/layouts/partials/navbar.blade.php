@@ -82,6 +82,38 @@
                 <div class="dropdown">
                     <a id="dropdownUser" class="nav-link dropdown-toggle text-light" href="#" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
+                        Clases
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownUser">
+                        <a class="dropdown-item" href="/classes">
+                            <span class="material-symbols-outlined">
+                                visibility
+                            </span>
+                            Ver clases
+                        </a>
+                        <a class="dropdown-item" href="/classes/new">
+                            <span class="material-symbols-outlined">
+                                person_add
+                            </span>
+                            Crear clase
+                        </a>
+                        <a class="dropdown-item" href="/classes/edit">
+                            <span class="material-symbols-outlined">
+                                edit
+                            </span>
+                            Editar clase
+                        </a>
+                        <a class="dropdown-item" href="/classes/delete">
+                            <span class="material-symbols-outlined">
+                                delete
+                            </span>
+                            Eliminar clase
+                        </a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a id="dropdownUser" class="nav-link dropdown-toggle text-light" href="#" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
                         {{ auth()->user()->name }}
                     </a>
                     <div class="dropdown-menu" aria-labelledby="dropdownUser">
