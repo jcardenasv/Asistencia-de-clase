@@ -10,23 +10,26 @@ class classeController extends Controller
 {
     public function index()
     {
-        $classes = Classe::orderBy('id', 'desc')->paginate(5);
+        $classes = Classe::orderBy('id', 'desc')->paginate(10);
         return view('classes.index', compact('classes'));
     }
 
     public function store(Request $request)
     {
-        $request->validate([
-            'id_course' => 'required',
+        $validations = [
+            'id_course' => ['required', 'exists:courses,code'],
             'number' => 'required',
             'topic' => 'required'
-        ]);
+        ];
+        $request->validate($validations);
 
-        $classe = new Classe;
-        $classe->id_course = $request->id_course;
-        $classe->number = $request->number;
-        $classe->topic = $request->topic;
-        $classe->save();
+        $data = [
+            'id_course' => $request['id_course'],
+            'number' => $request['number'],
+            'topic' => $request['topic'],
+        ];
+        
+        Classe::create($data);
 
         return redirect()->to('classes')->with('success', 'Clase creada correctamente');
     }
@@ -54,7 +57,7 @@ class classeController extends Controller
     public function update(Request $request)
     {
         $validations = [
-            'id_course' => 'required',
+            'id_course' => ['required', 'exists:courses,code'],
             'number' => 'required',
             'topic' => 'required'
         ];
