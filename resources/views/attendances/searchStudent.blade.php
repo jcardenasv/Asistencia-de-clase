@@ -15,7 +15,7 @@
                         <div class="row">
                             <div class="col-1"></div>
                             <div class="col-11">
-                                <label for="id" class="form-label">ID Estudiante</label>
+                                <label for="id" class="form-label">Cédula Estudiante</label>
                             </div>
                         </div>
                     </div>

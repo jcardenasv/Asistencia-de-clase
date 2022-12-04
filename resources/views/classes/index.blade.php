@@ -7,7 +7,7 @@
         <thead>
             <tr>
                 <th>ID</th>
-                <th>ID CURSO</th>
+                <th>CÓDIGO CURSO</th>
                 <th>NÚMERO</th>
                 <th>TÓPICO</th>
             </tr>

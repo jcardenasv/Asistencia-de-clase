@@ -14,7 +14,7 @@
                 </div>
                 <div class="mt-3">
                     <div class="container-fluid">
-                        <label for="id_student" class="form-label">ID del Estudiante</label>
+                        <label for="id_student" class="form-label">Cédula del Estudiante</label>
                     </div>
                 </div>
                 <div class="container-fluid">

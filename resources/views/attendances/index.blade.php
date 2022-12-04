@@ -8,7 +8,7 @@
             <tr>
                 <th>ID</th>
                 <th>ID CLASE</th>
-                <th>ID ESTUDIANTE</th>
+                <th>CÉDULA ESTUDIANTE</th>
             </tr>
         </thead>
         <tbody>

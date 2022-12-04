@@ -15,15 +15,15 @@ return new class extends Migration
     {
         Schema::create('classes', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('id_course');
+            $table->string('id_course');
             $table->integer('number');
             $table->string('topic');
-            $table->timestamps();
             $table->foreign('id_course')
-                ->references('id')
+                ->references('code')
                 ->on('courses')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
+            $table->timestamps();
         });
     }
 

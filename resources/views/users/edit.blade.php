@@ -30,7 +30,7 @@
                 </div>
                 <div class="mt-2">
                     <div class="container-fluid">
-                        <label for="num_id" class="form-label">Cedula</label>
+                        <label for="num_id" class="form-label">Cédula</label>
                     </div>
                 </div>
                 <div class="container-fluid">

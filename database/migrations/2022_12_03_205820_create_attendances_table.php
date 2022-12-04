@@ -16,15 +16,15 @@ return new class extends Migration
         Schema::create('attendances', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('id_class');
-            $table->unsignedBigInteger('id_student');
+            $table->bigInteger('id_student');
             $table->foreign('id_class')
                 ->references('id')
                 ->on('classes')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
             $table->foreign('id_student')
-                ->references('id')
-                ->on('students') # Posible cambio para users
+                ->references('num_id')
+                ->on('users')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
             $table->timestamps();

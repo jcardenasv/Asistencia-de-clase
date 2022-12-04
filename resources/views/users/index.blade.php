@@ -8,7 +8,7 @@
             <tr>
                 <th>ID</th>
                 <th>NOMBRE</th>
-                <th>CEDULA</th>
+                <th>CÉDULA</th>
                 <th>USERNAME</th>
                 <th>EMAIL</th>
                 <th>ROL</th>

@@ -20,7 +20,7 @@
                 </div>
                 <div class="mt-3">
                     <div class="container-fluid">
-                        <label for="id_course" class="form-label">ID del Curso</label>
+                        <label for="id_course" class="form-label">Código del Curso</label>
                     </div>
                 </div>
                 <div class="container-fluid">
