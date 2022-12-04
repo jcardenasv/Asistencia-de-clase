@@ -123,6 +123,12 @@
                             </span>
                             Ver asistencias
                         </a>
+                        <a class="dropdown-item" href="/attendances/students">
+                            <span class="material-symbols-outlined">
+                                search
+                            </span>
+                            Por estudiante
+                        </a>
                         <a class="dropdown-item" href="/attendances/new">
                             <span class="material-symbols-outlined">
                                 person_add

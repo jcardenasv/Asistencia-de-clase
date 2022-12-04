@@ -80,4 +80,15 @@ class attendanceController extends Controller
         $attendance->delete();
         return redirect()->to('/attendances/delete')->with('success', 'Asistencia eliminada con éxito!');
     }
+
+    public function searchStudent()
+    {
+        return view('attendances.searchStudent');
+    }
+
+    public function indexStudent(Request $request)
+    {
+        $attendances = Attendance::where('id_student', $request['id'])->get();
+        return view('attendances.index', compact('attendances'));
+    }
 }

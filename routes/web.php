@@ -62,6 +62,8 @@ Route::post('/attendances', [attendanceController::class, 'store'])->middleware(
 Route::get('/attendances/new', [attendanceController::class, 'create'])->middleware('auth')->middleware('canAccess');
 Route::get('/attendances/edit', [attendanceController::class, 'edit'])->middleware('auth')->middleware('canAccess');
 Route::post('/attendances/edit', [attendanceController::class, 'search'])->middleware('auth')->middleware('canAccess');
-Route::put('/attendances/edit', [attendanceController::class, 'update'])->middleware('auth')->middleware('canAccess')->name('classes.update');
+Route::put('/attendances/edit', [attendanceController::class, 'update'])->middleware('auth')->middleware('canAccess')->name('attendances.update');
 Route::get('/attendances/delete', [attendanceController::class, 'delete'])->middleware('auth')->middleware('canAccess');
 Route::delete('/attendances/delete', [attendanceController::class, 'destroy'])->middleware('auth')->middleware('canAccess');
+Route::get('/attendances/students', [attendanceController::class, 'searchStudent'])->middleware('auth');
+Route::get('/attendances/student', [attendanceController::class, 'indexStudent'])->middleware('auth');
