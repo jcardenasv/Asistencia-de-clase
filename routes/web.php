@@ -50,22 +50,22 @@ Route::delete('/courses/delete', [CourseController::class, 'destroy'])->middlewa
 #CLASSES
 Route::get('/classes', [classeController::class, 'index'])->middleware('auth');
 Route::post('/classes', [classeController::class, 'store'])->middleware('auth');
-Route::get('/classes/new', [classeController::class, 'create'])->middleware('auth')->middleware('canAccess');
-Route::get('/classes/edit', [classeController::class, 'edit'])->middleware('auth')->middleware('canAccess');
-Route::post('/classes/edit', [classeController::class, 'search'])->middleware('auth')->middleware('canAccess');
-Route::put('/classes/edit', [classeController::class, 'update'])->middleware('auth')->middleware('canAccess')->name('classes.update');
-Route::get('/classes/delete', [classeController::class, 'delete'])->middleware('auth')->middleware('canAccess');
-Route::delete('/classes/delete', [classeController::class, 'destroy'])->middleware('auth')->middleware('canAccess');
+Route::get('/classes/new', [classeController::class, 'create'])->middleware('auth')->middleware('teacherAccess');
+Route::get('/classes/edit', [classeController::class, 'edit'])->middleware('auth')->middleware('teacherAccess');
+Route::post('/classes/edit', [classeController::class, 'search'])->middleware('auth')->middleware('teacherAccess');
+Route::put('/classes/edit', [classeController::class, 'update'])->middleware('auth')->middleware('teacherAccess')->name('classes.update');
+Route::get('/classes/delete', [classeController::class, 'delete'])->middleware('auth')->middleware('teacherAccess');
+Route::delete('/classes/delete', [classeController::class, 'destroy'])->middleware('auth')->middleware('teacherAccess');
 
 #ATTENDANCES
 Route::get('/attendances', [attendanceController::class, 'index'])->middleware('auth');
 Route::post('/attendances', [attendanceController::class, 'store'])->middleware('auth');
-Route::get('/attendances/new', [attendanceController::class, 'create'])->middleware('auth')->middleware('canAccess');
-Route::get('/attendances/edit', [attendanceController::class, 'edit'])->middleware('auth')->middleware('canAccess');
-Route::post('/attendances/edit', [attendanceController::class, 'search'])->middleware('auth')->middleware('canAccess');
-Route::put('/attendances/edit', [attendanceController::class, 'update'])->middleware('auth')->middleware('canAccess')->name('attendances.update');
-Route::get('/attendances/delete', [attendanceController::class, 'delete'])->middleware('auth')->middleware('canAccess');
-Route::delete('/attendances/delete', [attendanceController::class, 'destroy'])->middleware('auth')->middleware('canAccess');
+Route::get('/attendances/new', [attendanceController::class, 'create'])->middleware('auth')->middleware('teacherAccess');
+Route::get('/attendances/edit', [attendanceController::class, 'edit'])->middleware('auth')->middleware('teacherAccess');
+Route::post('/attendances/edit', [attendanceController::class, 'search'])->middleware('auth')->middleware('teacherAccess');
+Route::put('/attendances/edit', [attendanceController::class, 'update'])->middleware('auth')->middleware('teacherAccess')->name('attendances.update');
+Route::get('/attendances/delete', [attendanceController::class, 'delete'])->middleware('auth')->middleware('teacherAccess');
+Route::delete('/attendances/delete', [attendanceController::class, 'destroy'])->middleware('auth')->middleware('teacherAccess');
 Route::get('/attendances/students', [attendanceController::class, 'searchStudent'])->middleware('auth');
 Route::get('/attendances/student', [attendanceController::class, 'indexStudent'])->middleware('auth');
 
