@@ -9,21 +9,24 @@ class attendanceController extends Controller
 {
     public function index()
     {
-        $attendances = Attendance::orderBy('id', 'desc')->paginate(5);
+        $attendances = Attendance::orderBy('id', 'desc')->paginate(10);
         return view('attendances.index', compact('attendances'));
     }
 
     public function store(Request $request)
     {
-        $request->validate([
-            'id_class' => 'required',
-            'id_student' => 'required'
-        ]);
+        $validations = [
+            'id_class' => ['required', 'exists:classes,id'],
+            'id_student' => ['required', 'exists:users,num_id']
+        ];
+        $request->validate($validations);
 
-        $attendance = new Attendance;
-        $attendance->id_class = $request->id_class;
-        $attendance->id_student = $request->id_student;
-        $attendance->save();
+        $data = [
+            'id_class' => $request['id_class'],
+            'id_student' => $request['id_student']
+        ];
+
+        Attendance::create($data);
 
         return redirect()->to('attendances')->with('success', 'Asistencia creada correctamente');
     }
@@ -51,8 +54,8 @@ class attendanceController extends Controller
     public function update(Request $request)
     {
         $validations = [
-            'id_class' => 'required',
-            'id_student' => 'required'
+            'id_class' => ['required', 'exists:classes,id'],
+            'id_student' => ['required', 'exists:users,num_id']
         ];
         $request->validate($validations);
 
@@ -88,7 +91,7 @@ class attendanceController extends Controller
 
     public function indexStudent(Request $request)
     {
-        $attendances = Attendance::where('id_student', $request['id'])->get();
+        $attendances = Attendance::where('id_student', $request['id'])->orderBy('id', 'desc')->get();
         return view('attendances.index', compact('attendances'));
     }
 }
