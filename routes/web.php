@@ -20,6 +20,7 @@ use App\Http\Controllers\attendanceController;
 |
 */
 
+#LOGIN
 Route::get('/', [loginController::class, 'show'])->name('login');
 Route::get('/login', [loginController::class, 'show'])->name('login');
 Route::post('/login', [loginController::class, 'login']);
@@ -67,3 +68,14 @@ Route::get('/attendances/delete', [attendanceController::class, 'delete'])->midd
 Route::delete('/attendances/delete', [attendanceController::class, 'destroy'])->middleware('auth')->middleware('canAccess');
 Route::get('/attendances/students', [attendanceController::class, 'searchStudent'])->middleware('auth');
 Route::get('/attendances/student', [attendanceController::class, 'indexStudent'])->middleware('auth');
+
+#TEACHER ASSIGN
+Route::get('/courses/teacher_assign', [CourseController::class, 'teacherAssign'])->middleware('auth')->middleware('canAccess');
+Route::post('/courses/teacher_assign/search_course', [CourseController::class, 'searchCourse'])->middleware('auth')->middleware('canAccess');
+Route::post('/courses/teacher_assign/assign', [CourseController::class, 'assign'])->middleware('auth')->middleware('canAccess');
+
+#ENROLL STUDENT
+Route::get('/enroll', [CourseController::class, 'enrollStudent'])->middleware('auth')->middleware('canAccess');
+Route::post('/enroll', [CourseController::class, 'enroll'])->middleware('auth')->middleware('canAccess');
+Route::post('/enroll/search_course', [CourseController::class, 'searchCourseEnroll'])->middleware('auth')->middleware('canAccess');
+
