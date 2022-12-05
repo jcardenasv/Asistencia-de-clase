@@ -15,6 +15,9 @@
                 <li class="nav-item">
                     <a class="nav-link text-light" aria-current="page" href="/">Inicio</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" aria-current="page" href="/enroll">Matricular estudiante</a>
+                </li>
                 <div class="dropdown">
                     <a id="dropdownUser" class="nav-link dropdown-toggle text-light" href="#" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
@@ -76,6 +79,12 @@
                                 delete
                             </span>
                             Eliminar curso
+                        </a>
+                        <a class="dropdown-item" href="/courses/teacher_assign">
+                            <span class="material-symbols-outlined">
+                                assignment_ind
+                            </span>
+                            Asignar Profesor
                         </a>
                     </div>
                 </div>

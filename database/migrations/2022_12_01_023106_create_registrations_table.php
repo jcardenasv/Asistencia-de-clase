@@ -15,15 +15,15 @@ return new class extends Migration
     {
         Schema::create('registrations', function (Blueprint $table) {
             $table->id();
-            $table->string('id_course');
-            $table->bigInteger('id_student');
+            $table->unsignedBigInteger('id_course');
+            $table->unsignedBigInteger('id_student');
             $table->foreign('id_course')
-                ->references('code')
+                ->references('id')
                 ->on('courses')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
             $table->foreign('id_student')
-                ->references('num_id')
+                ->references('id')
                 ->on('users')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');

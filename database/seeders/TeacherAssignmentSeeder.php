@@ -15,7 +15,7 @@ class TeacherAssignmentSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('teacher_assignment')->insert(
+        DB::table('teacher_assignments')->insert(
             [
                 'id_teacher' => 1,
                 'id_course' => 1
